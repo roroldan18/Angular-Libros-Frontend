@@ -1,0 +1,21 @@
+<h2>{{ titulos }}</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Genero</th>
+            <th>Descripcion</th>
+            <th>Persona que lo tiene</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of libros"> 
+            <td>{{book.nombre}}</td>
+            <td>{{book.genero.nombre}}</td>
+            <td>{{book.descripcion}}</td>
+            <td>{{book.persona}}</td>
+        </tr>
+        <tr>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,8 @@
+<div class="card">
+    <div class="form">
+        <app-person-form (newPerson)='personReceived($event)' [persons]='persons' (borrarPersona)='personaRecibida($event)' (putPerson)='personaAModificar($event)'></app-person-form>
+    </div>
+    <div class="list">
+        <app-person-list [persons]='persons'></app-person-list>
+    </div>    
+</div>

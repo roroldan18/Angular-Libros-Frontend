@@ -1,0 +1,23 @@
+<h2>{{ titulos }}</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Alias</th>
+            <th>Email</th>
+            <th>Celular</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of persons">
+            <td>{{person.nombre}}</td>
+            <td>{{person.apellido}}</td>
+            <td>{{person.alias}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.celu}}</td>
+        </tr>
+        <tr>
+        </tr>
+    </tbody>
+</table>

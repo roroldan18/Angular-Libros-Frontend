@@ -1,0 +1,34 @@
+<h2>Ingresar nuevo libro</h2>
+<form (ngSubmit)='sendBook()'>
+  <label for="bookName">Titulo del Libro</label><br>
+  <input type="text" id="bookName" name="bookName" [(ngModel)]="book.nombre"><br>
+  <label for="bookGender">Genero</label><br>
+  <select name="bookGenderId" id="bookGenderId" [(ngModel)]="book.genero">
+    <option *ngFor="let gender of genders" [value]='gender._id'>{{gender.nombre}}</option>
+  </select><br>
+  <label for="bookDescription">Descripcion</label><br>
+  <input type="text" id="bookDescription" name="bookDescription" [(ngModel)]="book.descripcion"><br>
+  <label for="personId">Persona que lo tiene</label><br>
+  <select id="personId" name="personId" [(ngModel)]="book.persona">
+    <option *ngFor="let person of persons" [value]='person._id'>{{person.alias}}</option>
+  </select><br>
+  <button type="submit">Agregar</button>
+</form>
+<h2>Borrar un Libro</h2>
+<form (ngSubmit)='deleteBook()'>
+  <label for="bookName">Titulo del Libro</label><br>
+  <select name="bookName" id="bookName" [(ngModel)]="book._id">
+    <option *ngFor="let book of books" [value]='book._id'>{{book.nombre}}</option>
+  </select><br>
+  <button type="submit">Borrar</button>
+</form>
+<h2>Modificar la descripcion de un libro</h2>
+<form (ngSubmit)='putBookDescription()'>
+  <label for="bookName">Titulo del Libro</label><br>
+  <select name="bookName" id="bookName" [(ngModel)]="book._id">
+    <option *ngFor="let book of books" [value]='book._id'>{{book.nombre}}</option>
+  </select><br>
+  <label for="bookDescription">Descripcion</label><br>
+  <input type="text" id="bookDescription" name="bookDescription" [(ngModel)]="book.descripcion"><br>
+  <button type="submit">Modificar</button>
+</form>

@@ -1,0 +1,37 @@
+<h2>Ingresar nueva persona</h2>
+<form (ngSubmit)='sendPerson()'>
+    <label for="nombre">Nombre</label><br>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="person.nombre" required><br>
+
+    <label for="apellido">Apellido</label><br>
+    <input type="text" id="apellido" name="apellido" [(ngModel)]="person.apellido" required><br>
+    
+    <label for="alias">Alias</label><br>
+    <input type="text" id="alias" name="alias" [(ngModel)]="person.alias" required><br>
+    
+    <label for="email">Email</label><br>
+    <input type="text" id="email" name="email" [(ngModel)]="person.email" required><br>
+
+    <label for="celu">Celular</label><br>  
+    <input type="text" id="celu" name="celu" [(ngModel)]="person.celu" required><br>
+
+    <button  type="submit">Agregar Persona</button>
+</form>
+<h2>Borrar una persona</h2>
+<form (ngSubmit)='deletePerson()'>
+    <label for="personID">Selecciona una persona</label><br>
+    <select id="personID" name="personID" [(ngModel)]="person._id">
+        <option *ngFor="let person of persons" [value]='person._id'>{{person.nombre}}</option>
+    </select><br>
+    <button type="submit">Borrar persona</button>
+</form>
+<h2>Actualizar el celular de una persona</h2>
+<form (ngSubmit)='putPerson()'>
+    <label for="personID">Selecciona una persona</label><br>
+    <select id="personID" name="personID" [(ngModel)]="person._id">
+        <option *ngFor="let person of persons" [value]='person._id'>{{person.nombre}}</option>
+    </select><br>
+    <label for="celu">Nuevo Celular</label><br>  
+    <input type="text" id="celu" name="celu" [(ngModel)]="person.celu" required><br>
+    <button type="submit">Modificar persona</button>
+</form>

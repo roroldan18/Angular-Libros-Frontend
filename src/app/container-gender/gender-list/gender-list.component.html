@@ -1,0 +1,11 @@
+<h2>{{ titulos }}</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Genero</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let gender of genders">
+        <tr>{{gender.nombre}}</tr>
+    </tbody>
+</table>

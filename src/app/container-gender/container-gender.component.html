@@ -1,0 +1,8 @@
+    <div class="card">
+      <div class="form">
+        <app-gender-form (newGender)='genderReceived($event)' [genders]='genders' (borrarGenero)='generoRecibido($event)' (putGenero)='generoAModificar($event)'></app-gender-form>
+      </div>
+      <div class="list">
+        <app-gender-list [genders]='genders'></app-gender-list>
+      </div>
+    </div>

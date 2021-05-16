@@ -1,0 +1,20 @@
+<h2>Selecciona el libro y agrega a quien lo prestó</h2>
+<form (ngSubmit)='agregarPersonaPrestado()'>
+    <label for="bookName">Titulo del Libro</label><br>
+    <select name="bookName" id="bookName" [(ngModel)]="nuevoPrestamo.nombre">
+        <option *ngFor="let book of books" [value]='book._id'>{{book.nombre}}</option>
+    </select><br>
+    <label for="personAlias">Alias de la persona</label><br>
+    <select name="personAlias" id="personAlias" [(ngModel)]="nuevoPrestamo.persona">
+        <option *ngFor="let person of persons" [value]='person._id'> {{person.alias}}</option>
+    </select><br>
+    <button  type="submit">Prestar</button>
+</form>
+<h2>Devolver Libro</h2>
+<form (ngSubmit)='devolverLibro()'>
+    <label for="bookName">Titulo del Libro</label><br>
+    <select name="bookName" id="bookName" [(ngModel)]="devolucion">
+        <option *ngFor="let book of books" [value]='book._id'>{{book.nombre}}</option>
+    </select><br>
+    <button  type="submit">Devolver</button>
+</form>

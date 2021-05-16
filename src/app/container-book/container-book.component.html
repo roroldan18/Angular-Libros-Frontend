@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="form">
+        <app-book-form [genders]='genders' [persons]='persons' (newBook)='bookReceived($event)' (modificarDescripcion)='bookPutDescription($event)' (borrarLibro)='bookReceivedToDelete($event)' [books]='books'></app-book-form>
+    </div>
+    <div class="form">
+        <app-book-form-person [books]='books' [persons]='persons' (nuevoPrestamoEnviado)='libroPrestado($event)' ></app-book-form-person>
+    </div>
+    <div class="list">
+        <app-book-list [libros]='libros'></app-book-list>
+    </div>
+</div>
