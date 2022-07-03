@@ -1,9 +1,11 @@
 <h2>Ingrese un genero</h2>
+
 <form (ngSubmit)='sendGender()'>
     <label for="bookGender">Ingrese un genero</label><br>
     <input type="text" id="bookGender" name="bookGender" [(ngModel)]="bookGender.nombre"><br>
     <button type="submit">Agregar Genero</button>
 </form>
+
 <h2>Borrar un genero</h2>
 <form (ngSubmit)='deleteGender()'>
     <label for="genderId">Seleccione un genero</label><br>
@@ -12,8 +14,9 @@
     </select><br>
     <button type="submit">Borrar genero</button>
 </form>
+
 <h2>Modificar un genero</h2>
-<form (ngSubmit)='modificarGenero()'>
+<form (ngSubmit)="modificarGenero()">
     <label for="genderIdPut">Seleccione el genero a modificar</label><br>
     <select id="genderIDPut" name="genderIDPut" [(ngModel)]="bookGender._id">
         <option *ngFor="let gender of genders" [value]='gender._id'>{{gender.nombre}}</option>

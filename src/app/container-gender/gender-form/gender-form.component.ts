@@ -26,7 +26,6 @@ export class GenderFormComponent implements OnInit {
 
   //POST de genero
   async sendGender() {
-
     if(this.bookGender.nombre == ''){
       alert('No completaste todos los campos del formulario');
     }
